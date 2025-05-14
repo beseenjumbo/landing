@@ -4,82 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JUMBO - The Meme Elephant Coin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #f0f8ff, #ffffff);
-      color: #333;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom right, #ffe9f4, #d4eaff);
+      color: #222;
       text-align: center;
       padding: 2rem;
+      background-image: url('https://www.transparenttextures.com/patterns/elephant.png');
+    }
+    header {
+      padding-top: 2rem;
     }
     header img {
       max-width: 180px;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
+      font-size: 3rem;
+      color: #ff69b4;
     }
     h2 {
       font-weight: normal;
-      font-size: 1.2rem;
-      color: #555;
+      font-size: 1.3rem;
+      color: #444;
     }
     .btn {
       display: inline-block;
       margin: 1rem;
-      padding: 0.75rem 1.5rem;
+      padding: 0.8rem 1.8rem;
       font-size: 1rem;
-      background-color: #faae42;
+      background: rgba(255, 105, 180, 0.85);
       color: #fff;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
     .btn:hover {
-      background-color: #f39300;
+      background: rgba(255, 105, 180, 1);
+      transform: scale(1.05);
     }
     section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
-    .tokenomics, .roadmap {
+    ul {
       text-align: left;
-    }
-    .tokenomics ul, .roadmap ul {
       list-style: none;
       padding: 0;
     }
-    .tokenomics li, .roadmap li {
-      margin-bottom: 0.5rem;
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      position: relative;
     }
+    li:before {
+      content: "🐘";
+      position: absolute;
+      left: 0;
+    }
+    footer {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 4rem;
+    }
+    @keyframes float {
+      0% { transform: translatey(0px); }
+      50% { transform: translatey(-10px); }
+      100% { transform: translatey(0px); }
+    }
+    .jumbo-floating {
+      position: absolute;
+      width: 80px;
+      opacity: 0.2;
+      animation: float 6s ease-in-out infinite;
+    }
+    .top-left { top: 20px; left: 20px; }
+    .bottom-right { bottom: 20px; right: 20px; }
   </style>
 </head>
 <body>
-  <header>
-    <img src="./assets/x_logo.png" alt="JUMBO Logo" />
-    <h1>Welcome to JUMBO</h1>
-    <h2>The Mighty Meme Elephant Token</h2>
-  </header>
+  <img src="assets/x_logo.png" alt="JUMBO Logo" />
+  <h1>Welcome to JUMBO</h1>
+  <h2>The Mighty Meme Elephant Token - Cute but Powerful</h2>
 
   <a href="https://t.me/+ILxD0eC_hPozNzY9" class="btn">Join Telegram</a>
   <a href="https://x.com/JumboToken" class="btn">Follow on X</a>
 
-  <section class="tokenomics">
+  <section>
     <h2>🐘 Tokenomics</h2>
     <ul>
-      <li>🔸 Total Supply: 1,000,000,000,000 JUMBO</li>
-      <li>🔸 50% Fair Launch Liquidity</li>
-      <li>🔸 20% Marketing & Meme Contests</li>
-      <li>🔸 10% Dev Allocation</li>
-      <li>🔸 10% Ecosystem / Treasury</li>
-      <li>🔸 10% Community Airdrops & Incentives</li>
+      <li>Total Supply: 1 Trillion JUMBO</li>
+      <li>50% Fair Launch Liquidity</li>
+      <li>20% Marketing & Meme Contests</li>
+      <li>10% Dev Allocation</li>
+      <li>10% Ecosystem / Treasury</li>
+      <li>10% Community Airdrops & Incentives</li>
     </ul>
   </section>
 
-  <section class="roadmap">
+  <section>
     <h2>📍 Roadmap Highlights</h2>
     <ul>
       <li>✅ Fair Launch on Polygon</li>
@@ -92,7 +123,11 @@
   </section>
 
   <footer>
-    <p>© 2025 JUMBO Token. All Rights Reserved.</p>
+    <p>© 2025 JUMBO Coin. Powered by Elephants. Built by Degens.</p>
   </footer>
+
+  <!-- Optional animated floating elements -->
+  <img src="assets/x_logo.png" class="jumbo-floating top-left" alt="Floating Jumbo" />
+  <img src="assets/x_logo.png" class="jumbo-floating bottom-right" alt="Floating Jumbo" />
 </body>
 </html>
