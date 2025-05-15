@@ -17,9 +17,8 @@
       background-attachment: fixed;
     }
     .banner {
-      background: url('assets/banner_fulljumbo.png') center/cover no-repeat;
-      height: 400px;
-      position: relative;
+      background: url('assets/banner_fulljumbo.png') center top/contain no-repeat;
+      height: 500px;
       background-attachment: fixed;
     }
     header {
@@ -100,6 +99,10 @@
     .bottom-right { bottom: 20px; right: 20px; }
 
     @media (max-width: 768px) {
+      .banner {
+        background-size: cover;
+        height: 300px;
+      }
       h1 {
         font-size: 1.8rem;
       }
