@@ -16,14 +16,26 @@
     background-image: url('./assets/bg_pattern.png');
     background-attachment: fixed;
   }
-
+  /*
   .banner {
     background: url('assets/banner_fulljumbo.png') center center / cover no-repeat;
     height: 220px;  /* 🔧 adjust this value until it feels right */
-    background-size: cover;
+    /*background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }*/
+  
+  .banner {
+    text-align: center;
+    background-color: #ffeaf8; /* fallback bg */
+    padding: 2rem 0;
   }
+  .banner img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
 
   header {
     background: rgba(255,255,255,0.85);
@@ -187,7 +199,10 @@
 
 </head>
 <body>
-  <div class="banner"></div>
+  <!-- <div class="banner"></div> -->
+  <div class="banner">
+    <img src=".assets/banner_fulljumbo.png" alt="Jumbo Banner" />
+  </div>
 
   <header>
     <h1>Welcome to JUMBO</h1>
