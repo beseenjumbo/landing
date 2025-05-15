@@ -18,11 +18,11 @@
   }
 
   .banner {
-    background: url('./assets/banner_fulljumbo.png') center center/cover no-repeat;
-    height: 500px;
+    background: url('assets/banner_fulljumbo.png') center center/contain no-repeat;
+    height: 300px;
     width: 100%;
-    background-attachment: scroll; /* Optional: change to fixed if you want parallax feel */
-    background-color: #ffeaf5; /* fallback */
+    background-color: #ffeaf5;
+    background-position: center top;
   }
 
   header {
@@ -147,8 +147,8 @@
 
   @media (max-width: 768px) {
     .banner {
-      background-size: cover;
-      height: 300px;
+      height: 200px;
+      background-size: contain;
     }
     h1 {
       font-size: 1.8rem;
