@@ -4,206 +4,195 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JUMBO - The Meme Elephant Coin</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./assets/logo3.png">
+
   <style>
-  body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(to bottom right, #ffe9f4, #d4eaff);
-    color: #222;
-    text-align: center;
-    padding: 0;
-    background-image: url('./assets/bg_pattern.png');
-    background-attachment: fixed;
-  }
-  
-  .banner {
-    background: url('assets/web_banner.png') center center / cover no-repeat;
-    height: 220px;  /* 🔧 adjust this value until it feels right */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom right, #ffe9f4, #d4eaff);
+      color: #222;
+      text-align: center;
+      padding: 0;
+      background-image: url('./assets/bg_pattern.png');
+      background-attachment: fixed;
+    }
 
-  /*
-  .banner {
-    text-align: center;
-    background-color: #ffeaf8; /* fallback bg */
-  /*  padding: 2rem 0;
-  }
-  .banner img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-  }*/
+    .banner {
+      background-image: url('./assets/web_banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 360px;
+    }
 
+    @media (max-width: 768px) {
+      .banner {
+        background-image: url('./assets/mobile_banner.png');
+        height: 200px;
+        background-size: contain;
+      }
+    }
 
-  header {
-    background: rgba(255,255,255,0.85);
-    border-radius: 12px;
-    margin: -2rem auto 2rem auto;
-    max-width: 900px;
-    padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeSlideIn 1.2s ease-out forwards;
-  }
+    header {
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      margin: -2rem auto 2rem auto;
+      max-width: 900px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeSlideIn 1.2s ease-out forwards;
+    }
 
-  h1 {
-    font-size: 2.6rem;
-    color: #ff69b4;
-    margin-bottom: 0.5rem;
-  }
+    h1 {
+      font-size: 2.6rem;
+      color: #ff69b4;
+      margin-bottom: 0.5rem;
+    }
 
-  h2 {
-    font-weight: normal;
-    font-size: 1.2rem;
-    color: #444;
-  }
+    h2 {
+      font-weight: normal;
+      font-size: 1.2rem;
+      color: #444;
+    }
 
-  .btn {
-    display: inline-block;
-    margin: 1rem 0.5rem;
-    padding: 0.8rem 1.8rem;
-    font-size: 1rem;
-    background: rgba(255, 105, 180, 0.85);
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.2s ease;
-    animation: pulse 2s infinite;
-  }
+    .btn {
+      display: inline-block;
+      margin: 1rem 0.5rem;
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+      background: rgba(255, 105, 180, 0.85);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      animation: pulse 2s infinite;
+    }
 
-  .btn:hover {
-    background: rgba(255, 105, 180, 1);
-    transform: scale(1.05);
-  }
+    .btn:hover {
+      background: rgba(255, 105, 180, 1);
+      transform: scale(1.05);
+    }
 
-  section {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: rgba(255,255,255,0.85);
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease-out;
-  }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
 
-  section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  ul {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-  }
-
-  li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.2rem;
-    position: relative;
-  }
-
-  li:before {
-    content: "🐘";
-    position: absolute;
-    left: 0;
-  }
-
-  footer {
-    font-size: 0.85rem;
-    color: #888;
-    margin-top: 4rem;
-  }
-
-  @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-  }
-
-  @keyframes fadeSlideIn {
-    to {
+    section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-  }
 
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 rgba(255,105,180, 0.4); }
-    50% { box-shadow: 0 0 20px rgba(255,105,180, 0.6); }
-  }
-
-  @keyframes bannerZoom {
-    0% { background-size: 103%; }
-    100% { background-size: 106%; }
-  }
-
-  .jumbo-floating {
-    position: absolute;
-    width: 60px;
-    opacity: 0.15;
-    animation: float 6s ease-in-out infinite alternate;
-    will-change: transform;
-    transition: transform 0.3s ease-out;
-  }
-
-  .top-left { top: 20px; left: 20px; }
-  .bottom-right { bottom: 20px; right: 20px; }
-
-  @media (max-width: 768px) {
-    .banner {
-      height: 200px;
-      background-size: contain;
+    ul {
+      text-align: left;
+      list-style: none;
+      padding: 0;
     }
-    h1 {
-      font-size: 1.8rem;
-    }
-    h2 {
-      font-size: 1rem;
-    }
-    .btn {
-      display: block;
-      margin: 0.5rem auto;
-    }
-    header, section {
-      margin: 1rem;
-      padding: 1.5rem;
-    }
-  }
-</style>
 
-<script>
-  window.addEventListener('scroll', () => {
-    document.querySelectorAll('section').forEach(sec => {
-      const top = sec.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (top < windowHeight - 50) {
-        sec.classList.add('visible');
+    li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    li:before {
+      content: "🐘";
+      position: absolute;
+      left: 0;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 4rem;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-    });
+    }
 
-    // Parallax for floating jumbo elements
-    const scrollY = window.scrollY;
-    document.querySelectorAll('.jumbo-floating').forEach(el => {
-      el.style.transform = `translateY(${scrollY * 0.2}px)`;
-    });
-  });
-</script>
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 rgba(255,105,180, 0.4); }
+      50% { box-shadow: 0 0 20px rgba(255,105,180, 0.6); }
+    }
 
+    .jumbo-floating {
+      position: absolute;
+      width: 60px;
+      opacity: 0.15;
+      animation: float 6s ease-in-out infinite alternate;
+      will-change: transform;
+      transition: transform 0.3s ease-out;
+    }
+
+    .top-left { top: 20px; left: 20px; }
+    .bottom-right { bottom: 20px; right: 20px; }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
+      .btn {
+        display: block;
+        margin: 0.5rem auto;
+      }
+      header, section {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight - 50) {
+          sec.classList.add('visible');
+        }
+      });
+
+      // Parallax for floating jumbo elements
+      const scrollY = window.scrollY;
+      document.querySelectorAll('.jumbo-floating').forEach(el => {
+        el.style.transform = `translateY(${scrollY * 0.2}px)`;
+      });
+    });
+  </script>
 </head>
+
 <body>
-  <div class="banner"></div>
-  <!-- <div class="banner">
-    <img src="./assets/web_banner.png" alt="Jumbo Banner" />
-  </div> -->
+  <div class="banner" role="img" aria-label="Jumbo the Meme Elephant on Coins"></div>
 
   <header>
     <h1>Welcome to JUMBO</h1>
@@ -243,7 +232,7 @@
   </footer>
 
   <!-- Optional animated floating elements -->
-  <img src="assets/x_logo.png" class="jumbo-floating top-left" alt="Floating Jumbo" />
-  <img src="assets/x_logo.png" class="jumbo-floating bottom-right" alt="Floating Jumbo" />
+  <img src="./assets/x_logo.png" class="jumbo-floating top-left" alt="Floating Jumbo icon" />
+  <img src="./assets/x_logo.png" class="jumbo-floating bottom-right" alt="Floating Jumbo icon" />
 </body>
 </html>
