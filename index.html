@@ -18,16 +18,12 @@
   }
 
   .banner {
-    background-image: url('./assets/banner_fulljumbo.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
-    background-color: #fceefb;
+    background: url('./assets/banner_fulljumbo.png') center center/cover no-repeat;
     height: 500px;
     width: 100%;
-    display: block;
+    background-attachment: scroll; /* Optional: change to fixed if you want parallax feel */
+    background-color: #ffeaf5; /* fallback */
   }
-
 
   header {
     background: rgba(255,255,255,0.85);
